@@ -1,5 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { FormControl } from '@material-ui/core'
 
 class RegistrationForm extends React.Component {
     constructor(props) {
@@ -39,18 +40,21 @@ class RegistrationForm extends React.Component {
 
     render() {
         return(
-            <form onSubmit = {this.handleSubmit}>
-                <span>Email: </span>
-                <input id = "email" type="text" name="name" onChange = {this.handleChange}/>
-                <br/>
-                <span>Password: </span>
-                <input id = "password" type="text" name="name" onChange = {this.handleChange}/>
-                <br/>
-                <input type="submit" value="Submit" />
-                <br/>
-                <span>Already a User?</span>
-                <Link to = "/login">Sign In</Link>
-            </form>
+            <FormControl onSubmit = {this.handleSubmit}>
+                <fieldset>
+                    <legend>Registration</legend>
+                    <span>Email: </span>
+                    <input id = "email" type="text" name="name" onChange = {this.handleChange}/>
+                    <br/>
+                    <span>Password: </span>
+                    <input id = "password" type="text" name="name" onChange = {this.handleChange}/>
+                    <br/>
+                    <input type="submit" value="Submit" />
+                    <br/>
+                    <span>Already a User?</span>
+                    <Link to = "/login">Sign In</Link>
+                </fieldset>
+            </FormControl>
         )
     }
 }

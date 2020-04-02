@@ -1,7 +1,14 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
+import { FormControl, FormLabel, FormControlLabel, InputLabel, FormHelperText, Box, Button, Checkbox, ButtonBase, OutlinedInput } from '@material-ui/core'
+import { borders } from '@material-ui/system'
+import { Form } from 'react-bootstrap'
+
 // import userData from '../data/users'
 
+/**
+ * This component is for Login.
+ */
 class LoginForm extends React.Component {
 
     constructor(props) {
@@ -12,14 +19,6 @@ class LoginForm extends React.Component {
             email: "",
             password: ""
         }
-
-        /*
-        * Binding is not necessary if we are using arrow functions.
-        * Arrow functions directly bind 'this'.
-        * 
-        * this.handleChange = this.handleChange.bind(this)
-        * this.handleSubmit = this.handleSubmit.bind(this)
-        */
         
     }
 
@@ -38,26 +37,40 @@ class LoginForm extends React.Component {
 
     render() {
         return(
-            <form onSubmit = {this.handleSubmit}>
-                <fieldset>
-                <legend>Login</legend>
-                <span>Email: </span>
-                <input 
-                id = "email" 
-                type="text"
-                aria-required="true"
-                name="name"
-                onChange = {this.handleChange}/>
+            <Form>
+                <FormLabel component="legend" >Login</FormLabel>
+                <FormControl required = "true">
+                    <InputLabel htmlFor="my-email">Email address</InputLabel>
+                    <OutlinedInput id="my-input" aria-describedby="my-helper-text" />
+                    <FormHelperText id="my-helper-text">We'll not share your Email.</FormHelperText>
+                </FormControl>
                 <br/>
-                <span>Password: </span>
-                <input id = "password" type="text" name="name" onChange = {this.handleChange}/>
+                <FormControl required = "true">
+                    <InputLabel htmlFor="my-password">Password</InputLabel>
+                    <OutlinedInput id="my-input" aria-describedby="my-helper-text" />
+                    <FormHelperText id="my-helper-text">Your Password is Encrypted.</FormHelperText>
+                </FormControl>
                 <br/>
-                <input type="submit" value="Submit" />
+                <FormControlLabel
+                value="end"
+                control={<Checkbox color="primary" />}
+                label="Remember me"
+                labelPlacement="end"
+                />
                 <br/>
-                <span>New User? </span>
-                <Link to = "/registration">SignUp</Link>
-                </fieldset>
-            </form>
+                <ButtonBase>
+                    <Button variant = "contained" color = "primary" >Sign in</Button>
+                </ButtonBase>
+                <br/>
+                <Box component="span" display="block" border = {1} borderRadius="10%">
+                    Already a User?
+                    <Button href="#text-buttons" color="primary">
+                        <Link to = "/registration">
+                            Sign Up
+                        </Link>
+                    </Button>
+                </Box>
+            </Form>
         )
     }
 
