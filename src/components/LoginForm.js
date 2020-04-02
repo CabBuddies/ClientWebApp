@@ -81,7 +81,7 @@ class LoginForm extends React.Component {
                 </ButtonBase>
                 <br/>
                 <Box component="span" display="block" border = {1} borderRadius="10%">
-                    Already a User?
+                    New User?
                     <Button  href="#text-buttons" color="primary">
                         <Link to = "/registration">
                             Sign Up

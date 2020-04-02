@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Form, FormControl } from 'react-bootstrap'
-import { FormGroup } from '@material-ui/core'
+import { FormGroup, FormLabel } from '@material-ui/core'
 
 class RegistrationForm extends React.Component {
     constructor(props) {
