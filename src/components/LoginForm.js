@@ -2,8 +2,10 @@ import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { FormLabel, FormControlLabel, Box, Button, Checkbox, ButtonBase, TextField } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import { borders } from '@material-ui/system'
-import { Form } from 'react-bootstrap'
+import styled from 'styled-components'
+// import { borders } from '@material-ui/system'
+// import { Form } from 'react-bootstrap'
+// import {spacing} from '@material-ui/system'
 
 // import userData from '../data/users'
 
@@ -37,8 +39,8 @@ class LoginForm extends React.Component {
     }
 
     tfstyles = makeStyles((theme) =>({
-        tf:{
-            color:'blue',
+        root:{
+            color:'red',
             margin:theme.spacing(1),
             width: '25ch'
         }
@@ -47,28 +49,32 @@ class LoginForm extends React.Component {
     
 
     render() {
-        const classes = this.tfstyles
         return(
             
-            <form className = {classes.tf}>
-                <FormLabel component="legend" >Login</FormLabel>
-                <br/>
-                    <TextField 
+            <form >
+                <Box flexWrap="wrap" border={1} width={1/4} mx="auto" mt={3} >
+                    <Box mt={3}><FormLabel component="legend" >Login</FormLabel></Box> 
+                    <Box m={2}>
+                        <TextField 
                         required
                         id="my-input" 
                         aria-describedby="my-helper-text" 
                         label="Email Address" 
                         variant = "outlined"
-                    />
-                <br/><br/>
-                    <TextField 
-                        required
-                        id="my-input" 
-                        type="password"
-                        label = "password"
-                        variant = "outlined"
+                        
+                        onChange = {this.handleChange}
                         />
-                <br/>
+                    </Box>
+                    <Box m={2}>
+                        <TextField 
+                            required
+                            id="my-input" 
+                            type="password"
+                            label = "password"
+                            variant = "outlined"
+                        />
+                    </Box>
+                </Box>
                 <FormControlLabel
                 value="end"
                 control={<Checkbox color="primary" />}
@@ -80,8 +86,8 @@ class LoginForm extends React.Component {
                     <Button variant = "contained" color = "primary" href = {this.handleSubmit} >Sign in</Button>
                 </ButtonBase>
                 <br/>
-                <Box component="span" display="block" border = {1} borderRadius="10%">
-                    New User?
+                <Box component="legend" display="block" border = {1} width={1/5} mx="auto">
+                    Already a User?
                     <Button  href="#text-buttons" color="primary">
                         <Link to = "/registration">
                             Sign Up
