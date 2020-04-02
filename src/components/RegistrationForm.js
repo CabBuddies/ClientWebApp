@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FormControl } from '@material-ui/core'
+import { Form, FormControl } from 'react-bootstrap'
+import { FormGroup } from '@material-ui/core'
 
 class RegistrationForm extends React.Component {
     constructor(props) {
@@ -40,7 +41,12 @@ class RegistrationForm extends React.Component {
 
     render() {
         return(
-            <FormControl onSubmit = {this.handleSubmit}>
+            <Form onSubmit = {this.handleSubmit}>
+                <FormGroup controlId = "registration">
+                    <FormLabel> Sign Up </FormLabel>
+                    <FormControl type = "text" placeholder = "First Name"/>
+                    <FormControl type = "text" placeholder = "Last Name"/>
+                </FormGroup>
                 <fieldset>
                     <legend>Registration</legend>
                     <span>Email: </span>
@@ -54,7 +60,7 @@ class RegistrationForm extends React.Component {
                     <span>Already a User?</span>
                     <Link to = "/login">Sign In</Link>
                 </fieldset>
-            </FormControl>
+            </Form>
         )
     }
 }
