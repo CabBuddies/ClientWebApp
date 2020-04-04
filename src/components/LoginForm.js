@@ -1,13 +1,6 @@
-import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
-import { FormLabel, FormControlLabel, Box, Button, Checkbox, ButtonBase, TextField } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
-import styled from 'styled-components'
-// import { borders } from '@material-ui/system'
-// import { Form } from 'react-bootstrap'
-// import {spacing} from '@material-ui/system'
-
-// import userData from '../data/users'
+import React from 'react'
+// import PropTypes from 'prop-types'
+// import { Link } from 'react-router-dom'
 
 /**
  * This component is for Login.
@@ -22,79 +15,42 @@ class LoginForm extends React.Component {
             email: "",
             password: ""
         }
-        
     }
 
     handleChange = (event) => {
-        console.log(event.target.value)
         if(event.target.id === "email") 
             this.setState({email: event.target.value})
-        else
+        else if(event.target.id === "pwd")
             this.setState({password : event.target.value})
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
-        alert(`Login is in Development`)
+        alert(`
+        Login Details:
+        Email: ${this.state.email}
+        Password: Chupettamga..
+        `)
     }
-
-    tfstyles = makeStyles((theme) =>({
-        root:{
-            color:'red',
-            margin:theme.spacing(1),
-            width: '25ch'
+    style = {
+        form:{
+            margin: '2px',
+            width : '100%'
         }
-            
-    }))
-    
+    }
 
     render() {
         return(
-            
-            <form >
-                <Box flexWrap="wrap" border={1} width={1/4} mx="auto" mt={3} >
-                    <Box mt={3}><FormLabel component="legend" >Login</FormLabel></Box> 
-                    <Box m={2}>
-                        <TextField 
-                        required
-                        id="my-input" 
-                        aria-describedby="my-helper-text" 
-                        label="Email Address" 
-                        variant = "outlined"
-                        
-                        onChange = {this.handleChange}
-                        />
-                    </Box>
-                    <Box m={2}>
-                        <TextField 
-                            required
-                            id="my-input" 
-                            type="password"
-                            label = "password"
-                            variant = "outlined"
-                        />
-                    </Box>
-                </Box>
-                <FormControlLabel
-                value="end"
-                control={<Checkbox color="primary" />}
-                label="Remember me"
-                labelPlacement="end"
-                />
-                <br/>
-                <ButtonBase>
-                    <Button variant = "contained" color = "primary" href = {this.handleSubmit} >Sign in</Button>
-                </ButtonBase>
-                <br/>
-                <Box component="legend" display="block" border = {1} width={1/5} mx="auto">
-                    Already a User?
-                    <Button  href="#text-buttons" color="primary">
-                        <Link to = "/registration">
-                            Sign Up
-                        </Link>
-                    </Button>
-                </Box>
-            </form >
+            <div>
+                <form style={this.style.form} onSubmit = {this.handleSubmit}>
+                    <legend>Login:</legend>
+                    <div>
+                        <input type="text" id="email" placeholder="E-mail" required onChange = {this.handleChange}></input><br/>
+                        <input type="password" id="pwd" placeholder="password" required onChange = {this.handleChange}></input><br/>
+                        <button type="submit" id="lgbtn" >Login</button>
+                    </div>
+                </form>
+            </div>
         )
     }
 
