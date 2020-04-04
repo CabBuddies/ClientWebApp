@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FormControl } from '@material-ui/core'
+import { Form, FormControl } from 'react-bootstrap'
 
 class RegistrationForm extends React.Component {
     constructor(props) {
@@ -8,53 +8,55 @@ class RegistrationForm extends React.Component {
         super(props)
 
         this.state = {
-            userAuth:{
-                email: '',
-                password: ''
-            },
-            userDetails:{
-                firstName: '',
-                lastName: '',
-                phoneNumber: ''
-            },
-            userVerifiedDetails:{
-                email:'',
-                phoneNumber:''
-            }
+            firstName: '',
+            lastName: '',
+            email: '',
+            phoneNumber: '',
+            password: '',
         }
         this.handleChange = this.handleChange.bind(this)        
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(event) {
-        if(event.target.id === "email") 
-            this.setState({email: event.target.value})
-        else
-            this.setState({password : event.target.value})
-    }
+        const value = event.target.value;
+        this.setState({
+          ...this.state,
+          [event.target.name]: value
+        });
+      }
 
     handleSubmit(event) {
         event.preventDefault()
-        alert(`Registration is in Development`)
+        alert(`
+        Registration Details:
+        FirstName: ${this.state.firstName}
+        LastName: ${this.state.lastName}
+        Email: ${this.state.email}
+        Password: Chupettamga..
+        `)
+    }
+    style = {
+        form:{
+            margin: '2px',
+            width : '100%'
+        }
     }
 
     render() {
         return(
-            <FormControl onSubmit = {this.handleSubmit}>
-                <fieldset>
-                    <legend>Registration</legend>
-                    <span>Email: </span>
-                    <input id = "email" type="text" name="name" onChange = {this.handleChange}/>
-                    <br/>
-                    <span>Password: </span>
-                    <input id = "password" type="text" name="name" onChange = {this.handleChange}/>
-                    <br/>
-                    <input type="submit" value="Submit" />
-                    <br/>
-                    <span>Already a User?</span>
-                    <Link to = "/login">Sign In</Link>
-                </fieldset>
-            </FormControl>
+            <div>
+                <form style={this.style.form} onSubmit = {this.handleSubmit}>
+                    <legend>Signup:</legend>
+                    <div>
+                        <input type="text" id="fn" placeholder="First Name" required onChange = {this.handleChange}></input><br/>
+                        <input type="text" id="ln" placeholder="Last Name" required onChange = {this.handleChange}></input><br/>
+                        <input type="text" id="email" placeholder="E-mail" required onChange = {this.handleChange}></input><br/>
+                        <input type="password" id="pwd" placeholder="password" required onChange = {this.handleChange}></input><br/>
+                        <button type="submit" id="lgbtn" >Login</button>
+                    </div>
+                </form>
+            </div>
         )
     }
 }
