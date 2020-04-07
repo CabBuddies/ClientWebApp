@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import SocialLogin from './components/Login/SocialLogin'
 
 // lazy loading components
 const AuthTabs = lazy(() => import('./components/Login/AuthTabs'))
@@ -15,6 +16,7 @@ function App() {
           <Switch>
             <Route path = "/dashboard" component = {AuthTabs} />
             <Route path = "/mail"  component = {Mail}/>
+            <Route path = "/test" component = {SocialLogin} />
             <Route path = "/">
               <h1>Developing</h1>
             </Route>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal } from 'react-bootstrap'
+import { Modal, ModalTitle } from 'react-bootstrap'
 import SocialLogin from './SocialLogin'
 import AuthTabs from './AuthTabs'
 
@@ -10,13 +10,9 @@ class AuthModal extends React.Component {
 
     render() {
         return(
-            <Modal>
-                <Modal.Header>
-                    <AuthTabs />
-                </Modal.Header>
-                <Modal.Body>
-
-                </Modal.Body>
+            <Modal center = "true" size = "sm">
+                <ModalTitle>CabBuddies</ModalTitle>
+                <AuthTabs />
                 <Modal.Footer>
                     <SocialLogin />
                 </Modal.Footer>
