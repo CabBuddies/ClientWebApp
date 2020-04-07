@@ -1,6 +1,6 @@
 import React from 'react'
-import SocialLoginItem from './SocialLoginItem'
-import { ListGroup, Container } from 'react-bootstrap'
+import {ListGroup, ListGroupItem, Container} from 'react-bootstrap'
+import { Button, Icon } from 'semantic-ui-react'
 
 class SocialLogin extends React.Component {
     constructor(props) {
@@ -9,14 +9,22 @@ class SocialLogin extends React.Component {
 
     render() {
         return(
-            <Container>
-                <ListGroup horizontal = "xl" variant = "flush" as = "ul">
-                    <SocialLoginItem accountType = "Facebook" />
-                    <SocialLoginItem accountType = "Google" />
-                    <SocialLoginItem accountType = "Linkedin" />
-                    <SocialLoginItem accountType = "Twitter" />
-                </ListGroup>
-            </Container>
+        <Container>
+        <ListGroup horizontal = "sm"  as = "ul">
+        <ListGroupItem as = "li">
+        <Button color='facebook' icon='facebook' size='huge'/>
+        </ListGroupItem>
+        <ListGroupItem as = "li">
+        <Button color='linkedin' icon='linkedin' size='huge'/>
+        </ListGroupItem>
+        <ListGroupItem as = "li">
+        <Button color='twitter' icon='twitter' size='huge'/>
+        </ListGroupItem>
+        <ListGroupItem as = "li">
+        <Button color='green' icon='google' size='huge'/>
+        </ListGroupItem>
+        </ListGroup>
+        </Container>
         )
     }
 
