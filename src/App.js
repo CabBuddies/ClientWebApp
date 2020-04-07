@@ -4,7 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 // lazy loading components
-const AuthTabs = lazy(() => import('./components/Login/AuthTabs'))
+const AuthTabs = lazy(() => import('./components/login/AuthTabs'))
+const AuthModal = lazy(() => import('./components/login/AuthModal'))
+// const Home = lazy(() => import('./components/home/Home'))
 const Mail = lazy(() => import('./components/Mail'))
 
 function App() {
@@ -15,9 +17,7 @@ function App() {
           <Switch>
             <Route path = "/dashboard" component = {AuthTabs} />
             <Route path = "/mail"  component = {Mail}/>
-            <Route path = "/">
-              <h1>Developing</h1>
-            </Route>
+            <Route path = "/" component={AuthModal}/>
           </Switch>
         </Suspense>
       </Router>

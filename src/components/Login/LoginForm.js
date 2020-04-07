@@ -43,12 +43,6 @@ class LoginForm extends React.Component {
         this.setState({[input.name]: value})
     }
 
-    style = {
-        form:{
-            margin: '2px',
-            width : '100%'
-        }
-    }
 
     render() {
         if(localStorage.getItem('email')) {
