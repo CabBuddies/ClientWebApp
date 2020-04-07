@@ -45,7 +45,7 @@ class RegistrationForm extends React.Component {
             }`
             }
             </style>
-            <Container style={{width:'100rem'}}> 
+            <Container> 
                 <Form onSubmit = {this.handleSubmit}>
                     <Form.Row required>
                         <Form.Group controlId = "firstName" as = {Col} >

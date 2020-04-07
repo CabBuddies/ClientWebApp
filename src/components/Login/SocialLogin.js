@@ -1,21 +1,22 @@
 import React from 'react'
-import { ListGroup } from 'react-bootstrap'
 import SocialLoginItem from './SocialLoginItem'
+import { ListGroup, Container } from 'react-bootstrap'
 
 class SocialLogin extends React.Component {
-
     constructor(props) {
         super(props)
-    }
+        }
 
     render() {
         return(
-            <ListGroup horizontal = "sm" variant = "flush" as = "ul">
-                <SocialLoginItem accountType = "Facebook" />
-                <SocialLoginItem accountType = "Google" />
-                <SocialLoginItem accountType = "Linkedin" />
-                <SocialLoginItem accountType = "Twitter" />
-            </ListGroup>
+            <Container>
+                <ListGroup horizontal = "xl" variant = "flush" as = "ul">
+                    <SocialLoginItem accountType = "Facebook" />
+                    <SocialLoginItem accountType = "Google" />
+                    <SocialLoginItem accountType = "Linkedin" />
+                    <SocialLoginItem accountType = "Twitter" />
+                </ListGroup>
+            </Container>
         )
     }
 
