@@ -2,6 +2,7 @@ import React from 'react'
 import { Modal,Button } from 'react-bootstrap'
 import SocialLogin from './SocialLogin'
 import AuthTabs from './AuthTabs'
+import { Icon, Header } from 'semantic-ui-react'
 
 class AuthModal extends React.Component {
     constructor(props) {
@@ -15,12 +16,22 @@ class AuthModal extends React.Component {
     render() {
         return(
             <>
+            <style type="text/css">
+            {`
+                .modal-header{
+                    text-align: center
+                }
+            `}
+</style>
             <Button variant="outline-primary" onClick={()=>{this.setState({show:true})}}>Login/Signup</Button>
             <Modal show = {this.state.show}
                    onHide={() => this.setState({show:false})} 
             >
                 <Modal.Header closeButton>
-                    <h1>Login/Signup</h1>
+                    <Header as='h1' textAlign="center">
+                        <Icon name="car" color="blue" size="big" />
+                        <Header.Content>CabBuddies</Header.Content>
+                    </Header>
                 </Modal.Header>
                 <Modal.Body>
                    <AuthTabs />

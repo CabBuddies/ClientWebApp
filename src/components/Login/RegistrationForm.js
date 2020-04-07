@@ -47,31 +47,37 @@ class RegistrationForm extends React.Component {
             </style>
             <Container> 
                 <Form onSubmit = {this.handleSubmit}>
+                    {/* Form row for First name and Last name */}
                     <Form.Row required>
                         <Form.Group controlId = "firstName" as = {Col} >
-                        <Form.Label>First Name</Form.Label>
                         <Form.Control type = "text" placeholder = "First Name" value = {this.state.firstName} onChange = {this.handleChange} />
                         </Form.Group>
                         <Form.Group controlId = "lastName" as = {Col} >
-                        <Form.Label>Last Name</Form.Label>
                         <Form.Control type = "text" placeholder = "Last Name" value = {this.state.lastName} onChange = {this.handleChange} />
                         </Form.Group>
                     </Form.Row>
+
+                    {/* Email Element */}
                     <Form.Group controlId = "email" required>
-                        <Form.Label>Email</Form.Label>
                         <Form.Control type = "email" placeholder = "Enter Email" value = {this.state.email} onChange = {this.handleChange} />
                     </Form.Group>
+
+                    {/* Password Element */}
                     <Form.Group controlId = "password" required>
-                        <Form.Label>Password</Form.Label>
                         <Form.Control type = "password" placeholder = "Enter Password" value = {this.state.password} onChange = {this.handleChange} />
                     </Form.Group>
+
+                    {/* Phone Number Element */}
                     <Form.Group controlId = "phoneNumber">
-                        <Form.Label>Phone Number</Form.Label>
                         <Form.Control type = "tel" placeholder = "Enter Phone Number" value = {this.state.phoneNumber} onChange = {this.handleChange} />
                     </Form.Group>
-                    <Button type = "submit" variant = "primary" size = "sm">
+                    <Form.Group as={Row}>
+                    <Col xs={{ span: 6, offset: 4 }}>
+                    <Button type = "submit" variant = "primary" size = "lg">
                         Sign up
                     </Button>
+                    </Col>
+                    </Form.Group>
                 </Form>
             </Container>
             </>
