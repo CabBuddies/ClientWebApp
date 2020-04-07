@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListGroupItem, Button, Image } from 'react-bootstrap'
+import { ListGroupItem, Button } from 'react-bootstrap'
 
 class SocialLoginItem extends React.Component {
 
