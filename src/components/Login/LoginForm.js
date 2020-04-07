@@ -58,6 +58,9 @@ class LoginForm extends React.Component {
             .nav-tabs .nav-link{
                 width:50%
             }
+            .btn-group-lg>.btn, .btn-lg{
+                border-radius: 20px
+            }
             `}
             </style>
             <Container>
