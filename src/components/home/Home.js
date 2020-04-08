@@ -1,9 +1,8 @@
-import { React, lazy } from 'react'
+import React from 'react'
 import { Button } from 'react-bootstrap'
+import AuthModal from '../login/AuthModal' 
 
-const AuthModal = lazy(() => import('../login/AuthModal'))
-
-export default class Home extends React.Component{
+class Home extends React.Component{
     constructor(props){
         super(props)
 
@@ -16,10 +15,12 @@ export default class Home extends React.Component{
     {
         return(
             <>
-            <Button variant="outlined-primary" onClick={ ()=>this.setState( { show:true } ) }> Login/Signup</Button>
+            <Button variant="outline-primary" onClick={ ()=>this.setState( { show:true } ) }> Login/Signup</Button>
             <AuthModal show={this.state.show} onHide={() => { this.setState( { show: false } ) } }/>
             </>
         )
     }
 
 }
+
+export default Home
