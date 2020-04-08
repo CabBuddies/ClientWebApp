@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal,Button } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import SocialLogin from './SocialLogin'
 import AuthTabs from './AuthTabs'
 import { Icon, Header } from 'semantic-ui-react'
