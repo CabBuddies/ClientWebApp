@@ -6,8 +6,8 @@ import './App.css';
 
 // lazy loading components
 const AuthTabs = lazy(() => import('./components/login/AuthTabs'))
-const AuthModal = lazy(() => import('./components/login/AuthModal'))
-// const Home = lazy(() => import('./components/home/Home'))
+// const AuthModal = lazy(() => import('./components/login/AuthModal'))
+const Home = lazy(() => import('./components/home/Home'))
 const Mail = lazy(() => import('./components/Mail'))
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
           <Switch>
             <Route path = "/dashboard" component = {AuthTabs} />
             <Route path = "/mail"  component = {Mail}/>
-            <Route path = "/" component={AuthModal}/>
+            <Route path = "/" component={Home}/>
           </Switch>
         </Suspense>
       </Router>

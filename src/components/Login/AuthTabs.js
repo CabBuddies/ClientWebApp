@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tabs, Tab } from 'react-bootstrap'
+import { Tabs, Tab, Container } from 'react-bootstrap'
 import RegistrationForm from './RegistrationForm'
 import LoginForm from './LoginForm'
 
@@ -10,6 +10,8 @@ class AuthTabs extends React.Component {
 
     render() {
         return(
+            <Container>
+            <Tab.Container>
             <Tabs id = "auth-tab-container">
                 <Tab eventKey = "registration" title = "Sign Up">
                     <RegistrationForm/>
@@ -18,6 +20,8 @@ class AuthTabs extends React.Component {
                     <LoginForm/>
                 </Tab>
             </Tabs>
+            </Tab.Container>
+            </Container>
         )
     }
 }

@@ -22,11 +22,8 @@ class AuthModal extends React.Component {
                     text-align: center
                 }
             `}
-</style>
-            <Button variant="outline-primary" onClick={()=>{this.setState({show:true})}}>Login/Signup</Button>
-            <Modal show = {this.state.show}
-                   onHide={() => this.setState({show:false})} 
-            >
+            </style>
+            <Modal {...this.props} scrollable="true">
                 <Modal.Header closeButton>
                     <Header as='h1' textAlign="center">
                         <Icon name="car" color="blue" size="big" />
