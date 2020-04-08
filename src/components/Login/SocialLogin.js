@@ -7,26 +7,27 @@ class SocialLogin extends React.Component {
         super(props)
         }
 
-        render() {
+    render() {
         return(
         <Container>
-        <ListGroup horizontal = "sm"  as = "ul">
-        <ListGroupItem as = "li">
-        <Button color='facebook' icon='facebook' size='huge'/>
-        </ListGroupItem>
-        <ListGroupItem as = "li">
-        <Button color='linkedin' icon='linkedin' size='huge'/>
-        </ListGroupItem>
-        <ListGroupItem as = "li">
-        <Button color='twitter' icon='twitter' size='huge'/>
-        </ListGroupItem>
-        <ListGroupItem as = "li">
-        <Button color='green' icon='google' size='huge'/>
-        </ListGroupItem>
-        </ListGroup>
+            <ListGroup horizontal = "sm"  as = "ul">
+            <ListGroupItem as = "li">
+            <Button color='facebook' icon='facebook' size='huge'/>
+            </ListGroupItem>
+            <ListGroupItem as = "li">
+            <Button color='linkedin' icon='linkedin' size='huge'/>
+            </ListGroupItem>
+            <ListGroupItem as = "li">
+            <Button color='twitter' icon='twitter' size='huge'/>
+            </ListGroupItem>
+            <ListGroupItem as = "li">
+            <Button color='green' icon='google' size='huge'/>
+            </ListGroupItem>
+            </ListGroup>
         </Container>
         )
-        }
+    }
+
 }
 
 export default SocialLogin
