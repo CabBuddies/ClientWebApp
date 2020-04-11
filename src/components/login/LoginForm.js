@@ -71,7 +71,7 @@ class LoginForm extends React.Component {
                 <InputGroup.Prepend>
                     <Icon name="user outline" color="blue" size="large" />
                 </InputGroup.Prepend>
-                    <Form.Control type = "email" placeholder = "Enter email" value = {this.state.email} onChange = {this.handleChange} />
+                    <Form.Control type = "email" placeholder = "Enter email" required value = {this.state.email} onChange = {this.handleChange} />
                 </InputGroup>
                 </Form.Group>
 
@@ -81,7 +81,7 @@ class LoginForm extends React.Component {
                 <InputGroup.Prepend>
                     <Icon name="key" color="blue" size="large" />
                 </InputGroup.Prepend>
-                <Form.Control type = "password" placeholder = "Enter password" value = {this.state.password}  onChange = {this.handleChange} />
+                <Form.Control type = "password" placeholder = "Enter password" required value = {this.state.password}  onChange = {this.handleChange} />
                 </InputGroup>
                 </Form.Group>
 

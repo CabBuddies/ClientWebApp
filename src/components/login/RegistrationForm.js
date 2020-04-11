@@ -50,21 +50,21 @@ class RegistrationForm extends React.Component {
                     {/* Form row for First name and Last name */}
                     <Form.Row required>
                         <Form.Group controlId = "firstName" as = {Col} >
-                        <Form.Control type = "text" placeholder = "First Name" value = {this.state.firstName} onChange = {this.handleChange} />
+                        <Form.Control type = "text" placeholder = "First Name" required value = {this.state.firstName} onChange = {this.handleChange} />
                         </Form.Group>
                         <Form.Group controlId = "lastName" as = {Col} >
-                        <Form.Control type = "text" placeholder = "Last Name" value = {this.state.lastName} onChange = {this.handleChange} />
+                        <Form.Control type = "text" placeholder = "Last Name" required value = {this.state.lastName} onChange = {this.handleChange} />
                         </Form.Group>
                     </Form.Row>
 
                     {/* Email Element */}
                     <Form.Group controlId = "email" required>
-                        <Form.Control type = "email" placeholder = "Enter Email" value = {this.state.email} onChange = {this.handleChange} />
+                        <Form.Control type = "email" placeholder = "Enter Email" required value = {this.state.email} onChange = {this.handleChange} />
                     </Form.Group>
 
                     {/* Password Element */}
                     <Form.Group controlId = "password" required>
-                        <Form.Control type = "password" placeholder = "Enter Password" value = {this.state.password} onChange = {this.handleChange} />
+                        <Form.Control type = "password" placeholder = "Enter Password" required value = {this.state.password} onChange = {this.handleChange} />
                     </Form.Group>
 
                     {/* Phone Number Element */}
