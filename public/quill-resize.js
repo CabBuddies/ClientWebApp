@@ -1,7 +1,7 @@
 try{
-	alert('quill-resize added');
+	//alert('quill-resize added');
 	//document.body.addEventListener("load", function(){
-		console.log('body loaded');
+		//console.log('body loaded');
 		let toolbar = document.getElementsByClassName("ql-toolbar")[0];
 		console.log(toolbar);
 		let container = document.getElementsByClassName("ql-container")[0];
