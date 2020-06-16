@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 
 class RegistrationForm extends React.Component {
@@ -14,6 +14,8 @@ class RegistrationForm extends React.Component {
             password: '',
         }
     }
+    // yet to change
+    // const [firstname, setFn] = useState({firstName:'',lastName:'',email:'',phoneNumber:'',password:''})
 
     handleChange = (event) => {
         const value = event.target.value;

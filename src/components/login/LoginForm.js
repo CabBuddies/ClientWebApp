@@ -1,50 +1,53 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Form, Button, Container, Col, Row, InputGroup } from 'react-bootstrap'
 import { Icon } from 'semantic-ui-react'
 
 /**
  * This component is for Login.
+ * 
  */
-class LoginForm extends React.Component {
 
-    constructor(props) {
-        super(props)
 
-        // state of Login form
-        this.state = {
-            email: "",
-            password: "",
-            rememberMe: false
+function LoginForm(props) {
+
+    // hooks 
+    const [email,setEmail] = useState('')
+    const [password,setPassword] = useState('')
+    const [rememberMe,setRM] = useState(false)
+
+    const handleChange = (event)=>{
+        if(event.target.id === "email") {
+            setEmail(event.target.value)
+            // console.log(event.target.value)
         }
-    }
-
-    handleChange = (event) => {
-        if(event.target.id === "email") 
-            this.setState({email: event.target.value})
+            
         else if(event.target.id === "password")
-            this.setState({password : event.target.value})
-    }
+        {
+            setPassword(event.target.value)
+            // console.log(password)
+        }
+            
 
-    handleSubmit = (event) => {
+    }
+    
+    const handleSubmit = (event) =>{
         event.preventDefault()
-        const { email, rememberMe } = this.state
         localStorage.setItem('rememberMe', rememberMe)
         if(rememberMe)
             localStorage.setItem('email', email)
         alert(`
         Login Details:
-        Email: ${this.state.email}
+        Email: ${email}
         Password: Chupettamga..
         `)
     }
-
-    toggleRememberMe = (event) => {
+    
+    const toggleRememberMe = (event) =>{
         const input = event.target
         const value = input.type === 'checkbox' ? input.checked : input.value
-        this.setState({[input.name]: value})
+        setRM(value)
     }
 
-    render() {
         if(localStorage.getItem('email')) {
             return(<h1>You'll be redirected to home page</h1>)
         }
@@ -64,14 +67,14 @@ class LoginForm extends React.Component {
             `}
             </style>
             <Container>
-                <Form onSubmit = {this.handleSubmit}>
+                <Form onSubmit = {handleSubmit}>
                     {/* Email Element */}
                 <Form.Group controlId = "email">
                 <InputGroup>
                 <InputGroup.Prepend>
                     <Icon name="user outline" color="blue" size="large" />
                 </InputGroup.Prepend>
-                    <Form.Control type = "email" placeholder = "Enter email" required value = {this.state.email} onChange = {this.handleChange} />
+                    <Form.Control type = "email" placeholder = "Enter email" required value = {email} onChange = {handleChange} />
                 </InputGroup>
                 </Form.Group>
 
@@ -81,13 +84,13 @@ class LoginForm extends React.Component {
                 <InputGroup.Prepend>
                     <Icon name="key" color="blue" size="large" />
                 </InputGroup.Prepend>
-                <Form.Control type = "password" placeholder = "Enter password" required value = {this.state.password}  onChange = {this.handleChange} />
+                <Form.Control type = "password" placeholder = "Enter password" required value = {password}  onChange = {handleChange} />
                 </InputGroup>
                 </Form.Group>
 
                 {/* CheckBox */}
                 <Form.Group controlId = "rememberMe">
-                    <Form.Check type = "checkbox" label = "Remember me"  name = "rememberMe" checked = {this.state.rememberMe} onChange = {this.toggleRememberMe} />
+                    <Form.Check type = "checkbox" label = "Remember me"  name = "rememberMe" checked = {rememberMe} onChange = {toggleRememberMe} />
                 </Form.Group>
 
                 {/* Centered Button */}
@@ -103,8 +106,9 @@ class LoginForm extends React.Component {
             </>
             
         )
-    }
 
 }
+
+
 
 export default LoginForm

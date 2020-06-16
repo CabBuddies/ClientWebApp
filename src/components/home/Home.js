@@ -1,28 +1,16 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Button } from 'react-bootstrap'
 import AuthModal from '../login/AuthModal'
 import QuillEditor from '../editor/QuillEditor'
 
-class Home extends React.Component{
-    constructor(props){
-        super(props)
-
-        this.state = {
-            show: false
-        }
-    }
-
-    render()
-    {
+function Home(props){
+ const [show , setShow] = useState(false)
         return(
             <>
-                <Button variant="outline-primary" onClick={ ()=>this.setState( { show:true } ) }> Login/Signup</Button>
-                <AuthModal show={this.state.show} onHide={() => { this.setState( { show: false } ) } }/>
+                <Button variant="outline-primary" onClick={ ()=>setShow(true ) }> Login/Signup</Button>
+                <AuthModal show={show} onHide={() => setShow(false) }/>
                 <QuillEditor/>
             </>
         )
-    }
-
 }
-
 export default Home

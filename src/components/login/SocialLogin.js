@@ -1,14 +1,9 @@
 import React from 'react'
 import {ListGroup, ListGroupItem, Container} from 'react-bootstrap'
-import { Button, Icon } from 'semantic-ui-react'
+import { Button} from 'semantic-ui-react'
 
-class SocialLogin extends React.Component {
-    constructor(props) {
-        super(props)
-        }
-
-        render() {
-        return(
+function SocialLogin(props){
+return(
         <Container>
         <ListGroup horizontal = "sm"  as = "ul">
         <ListGroupItem as = "li">
@@ -25,8 +20,8 @@ class SocialLogin extends React.Component {
         </ListGroupItem>
         </ListGroup>
         </Container>
-        )
-        }
+      )
+
 }
 
 export default SocialLogin

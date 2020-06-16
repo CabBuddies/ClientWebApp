@@ -4,16 +4,9 @@ import SocialLogin from './SocialLogin'
 import AuthTabs from './AuthTabs'
 import { Icon, Header } from 'semantic-ui-react'
 
-class AuthModal extends React.Component {
-    constructor(props) {
-        super(props)
+function AuthModal(props) {
 
-        this.state ={
-            show:false
-        }
-    }
-
-    render() {
+    // const [show , setShow] = useState(false)
         return(
             <>
             <style type="text/css">
@@ -23,7 +16,7 @@ class AuthModal extends React.Component {
                 }
             `}
             </style>
-            <Modal {...this.props} scrollable="true">
+            <Modal {...props} scrollable="true">
                 <Modal.Header closeButton>
                     <Header as='h1' textAlign="center">
                         <Icon name="car" color="blue" size="big" />
@@ -39,7 +32,6 @@ class AuthModal extends React.Component {
             </Modal>
             </>
         )
-    }
 }
 
 export default AuthModal

@@ -3,12 +3,7 @@ import { Tabs, Tab, Container } from 'react-bootstrap'
 import RegistrationForm from './RegistrationForm'
 import LoginForm from './LoginForm'
 
-class AuthTabs extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
+function AuthTabs(props) {
         return(
             <Container>
             <Tab.Container>
@@ -23,7 +18,6 @@ class AuthTabs extends React.Component {
             </Tab.Container>
             </Container>
         )
-    }
 }
 
 export default AuthTabs

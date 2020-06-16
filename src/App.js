@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
-import SocialLogin from './components/login/SocialLogin'
+// import SocialLogin from './components/login/SocialLogin'
 
 // lazy loading components
 const AuthTabs = lazy(() => import('./components/login/AuthTabs'))
