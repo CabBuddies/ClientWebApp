@@ -1,38 +1,29 @@
-import React from 'react'
+import React,{useState} from 'react'
 import mail from 'ikmv-sampleisomorphicapilibrary'
 
-class Mail extends React.Component {
+function Mail(props) {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            to: '',
-            subject: '',
-            html: ''
-        }
-    }
+    const [details,setDetails] = useState({to: '',subject: '' , html: ''})
 
-    handleChange = (event) => {
+    const handleChange = (event) => {
         let bdy = {}
         bdy[event.target.id] = event.target.value
-        this.setState(bdy)
+        setDetails(bdy)
     }
 
-    handleSubmit = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault()
-        mail.sendMail(this.state.to, this.state.subject, this.state.html)
+        mail.sendMail(details.to,details.subject, details.html)
     }
 
-    render() {
         return(
-            <form onSubmit = {this.handleSubmit}>
-                <input id = "to" type = "text" name = "Email_To" onChange = {this.handleChange} /><br/>
-                <input id = "subject" type = "text" name = "Subject" onChange = {this.handleChange} /><br/>
-                <input id = "html" type = "html" name = "html" onChange = {this.handleChange} /><br/>
+            <form onSubmit = {handleSubmit}>
+                <input id = "to" type = "text" name = "Email_To" onChange = {handleChange} /><br/>
+                <input id = "subject" type = "text" name = "Subject" onChange = {handleChange} /><br/>
+                <input id = "html" type = "html" name = "html" onChange = {handleChange} /><br/>
                 <input type="submit"/>
             </form>
         )
     }
-}
 
 export default Mail
