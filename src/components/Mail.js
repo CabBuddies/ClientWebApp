@@ -15,7 +15,6 @@ function Mail(props) {
         event.preventDefault()
         mail.sendMail(details.to,details.subject, details.html)
     }
-
         return(
             <form onSubmit = {handleSubmit}>
                 <input id = "to" type = "text" name = "Email_To" onChange = {handleChange} /><br/>

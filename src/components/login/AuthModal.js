@@ -5,18 +5,9 @@ import AuthTabs from './AuthTabs'
 import { Icon, Header } from 'semantic-ui-react'
 
 function AuthModal(props) {
-
-    // const [show , setShow] = useState(false)
         return(
-            <>
-            <style type="text/css">
-            {`
-                .modal-header{
-                    text-align: center
-                }
-            `}
-            </style>
-            <Modal {...props} scrollable="true">
+            // ... spread operator to add props from parent component and new properties
+            <Modal {...props} scrollable="true"> 
                 <Modal.Header closeButton>
                     <Header as='h1' textAlign="center">
                         <Icon name="car" color="blue" size="big" />
@@ -30,7 +21,7 @@ function AuthModal(props) {
                     <SocialLogin />
                 </Modal.Footer>
             </Modal>
-            </>
+
         )
 }
 
